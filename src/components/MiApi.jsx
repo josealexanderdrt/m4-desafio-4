@@ -48,7 +48,7 @@ const MiApi = () => {
      
       
       <div className="row ">
-        {gotList.length > 0 ? (
+        {gotList.length > 0 ? ( //exprecion condicional se ejecutara el codigo ()
           gotList.map((got, e) => (
             <div key={e} className="col m-4 d-flex justify-content-center align-items-center">
               <Card style={{ width: "18rem" }} className="text-center justify-content-center align-items-center">
