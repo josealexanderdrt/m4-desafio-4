@@ -1,6 +1,6 @@
 
-const Buscador = ({ setGotSearch }) => {
-  const onSubmitHandle = (e) => {
+const Buscador = ({ setGotSearch }) => { // recibe como como parametro es la funcion que me va a permitir modificar la palabra de busqueda 
+  const onSubmitHandle = (e) => { 
     e.preventDefault();
     const buscarPalabra = e.target['buscador'].value.toLowerCase();
     setGotSearch(buscarPalabra);
@@ -8,7 +8,7 @@ const Buscador = ({ setGotSearch }) => {
 
   const clearHandle = (e) => {
     e.preventDefault();
-    setGotSearch('');
+    setGotSearch('');//vacio
   };
 
   return (

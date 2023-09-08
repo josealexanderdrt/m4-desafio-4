@@ -1,15 +1,16 @@
 import React, { useEffect, useState } from "react";
+import "bootstrap/dist/css/bootstrap.min.css"; //hoja de estilo 
 import Card from "react-bootstrap/Card";
 import Buscador from "./Buscador";
-import "bootstrap/dist/css/bootstrap.min.css";
+
 
 const MiApi = () => {
   
-  const [gotSearch, setGotSearch] = useState("");
-  const [gotList, setGotList] = useState([]);
+  const [gotSearch, setGotSearch] = useState(""); // se inicializa con una cadena vacia
+  const [gotList, setGotList] = useState([]); // con un array vacio
   const getGot = async () => {
     const url = "https://thronesapi.com/api/v2/Characters";
-    const response = await fetch(url); 
+    const response = await fetch(url); //obtener recursos de forma asíncrona por la red.
     const data = await response.json();
     const gotApi = data
       .map((e) => {
@@ -21,9 +22,9 @@ const MiApi = () => {
           imagen: e.imageUrl,
         };
       })
-      .sort((a, b) => a.fullName.localeCompare(b.fullName)); 
+      .sort((a, b) => a.fullName.localeCompare(b.fullName)); //ordenar arrays 
     if (gotSearch) {
-      setGotList(
+      setGotList(// es para actulizar el valor de setGotLits
         gotApi.filter(
           (got) =>
             got.fullName.toLowerCase().includes(gotSearch) ||
@@ -31,13 +32,13 @@ const MiApi = () => {
         )
       );
     } else {
-      setGotList(gotApi);
+      setGotList(gotApi); // si no se esta buscando nada, muestra la lista completa 
     }
   };
 
   useEffect(() => {
     getGot();
-  }, [gotSearch]);
+  }, [gotSearch]);  
 
   return (
     <>
