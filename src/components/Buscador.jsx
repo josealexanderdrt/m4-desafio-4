@@ -1,4 +1,3 @@
-import "bootstrap/dist/css/bootstrap.min.css";
 
 const Buscador = ({ setGotSearch }) => {
   const onSubmitHandle = (e) => {
