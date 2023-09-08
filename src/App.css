@@ -1,6 +1,22 @@
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
   text-align: center;
+
 }
+
+
+.boton{
+  background-color: #403d39;
+  color: #ccc5b9;
+  width: 90px;
+  border-radius: 20px;
+  
+}
+
+.boton:hover{
+  background-color: #111010;
+  border-radius: 3px;
+
+
+}
+
+

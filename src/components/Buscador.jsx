@@ -1,3 +1,5 @@
+import "bootstrap/dist/css/bootstrap.min.css";
+
 const Buscador = ({ setGotSearch }) => {
   const onSubmitHandle = (e) => {
     e.preventDefault();
@@ -11,20 +13,21 @@ const Buscador = ({ setGotSearch }) => {
   };
 
   return (
-    <div>
-      <form onSubmit={onSubmitHandle}>
-        Buscador
+    <div className=" d-flex text-center  align-items-star">
+      <form onSubmit={onSubmitHandle} >
+      
         <input
           type="text"
           name="buscador"
           id="buscador"
-          placeholder="You can search by Name or Kingdom Badge"
-          className=""
-
-          // se necesita un evento para un cambio de estado, en este caso el Onchange, en este caso recibira TODA LA FUNCION
+          placeholder="Buscar"
+          className="w-100  text-center mt-4"
         />
-        <button>Buscar</button>
-        <button onClick={clearHandle}>Limpiar</button>
+
+        <div>
+        <button className="m-2 boton">Buscar</button>
+        <button className="m-2 boton" onClick={clearHandle}>Limpiar</button>
+        </div>
       </form>
     </div>
   );
